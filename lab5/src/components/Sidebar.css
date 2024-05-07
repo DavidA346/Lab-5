@@ -1,0 +1,61 @@
+.filter-container{
+    background-color: grey;
+    height: 300px;
+    width: 200px;
+    border-radius: 10px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sort-by {
+    padding-bottom: 15px;
+}
+
+.sort-by-title {
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+input[type="radio"] {
+    float: left;
+}
+
+.radio-options {
+    font-size: 14px;
+    padding-top: 8px;
+    font-weight: lighter;
+}
+
+.time-frame-title {
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.time-frame{
+    width: 100px;
+}
+
+input[type=number] {
+    width: 140px;
+}
+
+.search-bar {
+    padding: 10px;
+}
+
+.number-of-articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-button {
+    padding-bottom: 20px;
+}
+
+.radio-options div {
+    margin-bottom: 5px;
+}

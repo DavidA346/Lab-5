@@ -1,0 +1,12 @@
+body {
+    background-color: rgb(36,36,36);
+}
+
+.main-container {
+    display: flex;
+    gap: 30px;
+}
+
+.article-container{
+    display: flex;
+}
