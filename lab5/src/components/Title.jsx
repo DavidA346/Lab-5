@@ -1,8 +1,8 @@
 import './Title.css'
 
-const Title = () => {
+const Title = ({titleMost, titleTime}) => {
   return (
-    <div className="title-container">Title</div>
+    <div className="title-container">{titleMost} - {titleTime}</div>
   )
 }
 

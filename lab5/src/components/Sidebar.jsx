@@ -1,7 +1,11 @@
 import './Sidebar.css'
+import React from 'react';
 
-const Sidebar = () => {
-  return (
+const Sidebar = ({mostFunction, timeFunction}) => {
+    const reassignTitle = (event) => mostFunction(event.target.value);
+    const reassignTitlePeriod = (event) => timeFunction(event.target.value);
+
+    return (
     <div className='filter-container'>
         <form className="number-of-articles">
             <div className="search-bar">
@@ -11,24 +15,24 @@ const Sidebar = () => {
             <input type="submit" value={"Search"}/>
             </div>
         </form>
-
+        
         <form className="sort-by">
                 <div>
                     <label htmlFor="sort-type" className="sort-by-title">Sort By:</label> <br/>
                     <div className="radio-options">
                         <div>
                             <label htmlFor="most-viewed">Most Viewed</label>
-                            <input type="radio" name="sort-type" id="most-viewed"/>
+                            <input type="radio" name="sort-type" id="most-viewed" value = "Most Viewed" onChange = {reassignTitle}/>
                         </div>
     
                         <div>
                             <label htmlFor="most-shared">Most Shared</label>
-                            <input type="radio" name="sort-type" id="most-shared"/>
+                            <input type="radio" name="sort-type" id="most-shared" value = "Most Shared" onChange = {reassignTitle}/>
                         </div>
                         
                         <div>
                             <label htmlFor="most-emailed">Most Emailed</label>
-                            <input type="radio" name="sort-type" id="most-emailed"/>
+                            <input type="radio" name="sort-type" id="most-emailed" value = "Most Emailed" onChange = {reassignTitle}/>
                         </div>
                     </div>
                 </div>
@@ -40,17 +44,17 @@ const Sidebar = () => {
                     <div className="radio-options">
                         <div>
                             <label htmlFor="day">Day</label>
-                            <input type="radio" name="time-type" id="day"/>
+                            <input type="radio" name="time-type" id="day" value = "Day" onChange = {reassignTitlePeriod}/>
                         </div>
     
                         <div>
                             <label htmlFor="week">Week</label>
-                            <input type="radio" name="time-type" id="week"/>
+                            <input type="radio" name="time-type" id="week" value = "Week" onChange = {reassignTitlePeriod}/>
                         </div>
                         
                         <div>
                             <label htmlFor="month">Month</label>
-                            <input type="radio" name="time-type" id="month"/>
+                            <input type="radio" name="time-type" id="month" value = "Month" onChange = {reassignTitlePeriod}/>
                         </div>
                     </div>
                 </div>
