@@ -1,18 +1,25 @@
 import './Sidebar.css'
-import React from 'react';
+import React, {useState} from 'react';
 
-const Sidebar = ({mostFunction, timeFunction}) => {
+const Sidebar = ({mostFunction, timeFunction, numFunction}) => {
     const reassignTitle = (event) => mostFunction(event.target.value);
     const reassignTitlePeriod = (event) => timeFunction(event.target.value);
+    const reassignNumber = () => {
+        console.log(number)
+        numFunction(number);}
+
+    const [number, SetNumber] = useState(1);
 
     return (
     <div className='filter-container'>
         <form className="number-of-articles">
             <div className="search-bar">
-            <input type="number" placeholder="Enter a value 1-15" min={1} max={15} required/> <br />
+            <input type="number" placeholder="Enter a value 1-15" min={1} max={15} value = {number} required onChange={(event)=>{
+                console.log(event)
+                SetNumber(event.target.value)}}/> <br />
             </div>
             <div className="search-button">
-            <input type="submit" value={"Search"}/>
+            <button type = "button" onClick={reassignNumber}>Search</button>
             </div>
         </form>
         

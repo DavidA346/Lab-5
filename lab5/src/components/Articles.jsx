@@ -1,5 +1,65 @@
+import React, { useEffect, useState } from 'react';
 import './Articles.css'
+
+/*const url = 'https://api.nytimes.com/svc/mostpopular/v2/';
+var sortOption = '';
+var timeOption = '';
+const apiKey = '.json?api-key=WOurXSGPYOGvLJy2DjGirkxRrWDZnYgP';
+
+const getArticles = async () => {
+    var mostFilter = document.getElementsByName('sort-type');
+    for (let i = 0; i < mostFilter.length; i++) {
+        if (i == 0 && mostFilter[i].checked) {
+            sortOption = 'viewed'; 
+            console.log("Most option = " + sortOption);
+        }
+        else if (i == 1 && mostFilter[i].checked) {
+            sortOption = 'shared'; 
+            console.log("Most option = " + sortOption);
+        }
+        else if (i == 2 && mostFilter[i].checked) {
+            sortOption = 'emailed'; 
+            console.log("Most option = " + sortOption);
+        }
+    }
+
+    var timeFilter = document.getElementsByName('time-type');
+    for (let j = 0; j < timeFilter.length; j++) {
+        if (j == 0 && timeFilter[j].checked){
+            timeOption = '/1';
+            console.log("Time option = " + timeOption);
+        }
+        else if (j == 1 && timeFilter[j].checked){
+            timeOption = '/7';
+            console.log("Time option = " + timeOption);
+        }
+        else if (j == 2 && timeFilter[j].checked){
+            timeOption = '/30';
+            console.log("Time option = " + timeOption);
+        }
+    }
+    console.log(url);
+    console.log(sortOption);
+    console.log(timeOption);
+    console.log(apiKey);
+    var filterURL = url + sortOption + timeOption + apiKey;
+    console.log(filterURL);
+
+    try {
+        const response = await fetch(filterURL);
+        const data = await response.json();
+        console.log(data); // you can view if a response went through in developer mode. 
+
+        //setArticles(data.results); // it should at most display 15 articles
+
+    } catch (error) {
+        console.error('Error fetching articles:', error);
+    }
+};*/
+
 const Articles = () => {
+    //getArticles();
+
   return (
     <div className="news-container">
 
