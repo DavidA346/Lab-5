@@ -6,6 +6,12 @@
     gap: 20px;
 }
 
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }  
+
 .card {
     background-color: #e1edf0;
     height: auto;
