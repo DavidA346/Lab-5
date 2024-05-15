@@ -9,9 +9,11 @@ const API_KEY = 'WOurXSGPYOGvLJy2DjGirkxRrWDZnYgP';
 function App() {
   const [most, SetMost] = useState("Default Title");
   const [time, SetTime] = useState("Default Period");
-  const [num, SetNum] = useState(1);
+  const [num, SetNum] = useState(0);
 
   const [articles, setArticles] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -19,14 +21,43 @@ function App() {
       try {
         const response = await fetch(url);
         const data = await response.json();
-        setArticles(data.results.slice(0, num));
+        if (num > 15) {
+          alert("Number is higher than 15.");
+        }
+        if (currentPage == 1){
+          if (num <= 6){
+            setArticles(data.results.slice(0, num));
+          }
+          else if (num > 6 && num <= 15) {
+            setArticles(data.results.slice(0, 6));
+          }
+        }
+        else if (currentPage == 2){
+          if (num > 6 && num <=12){
+            setArticles(data.results.slice(6, num));
+          }
+          else if (num > 12 && num <= 15) {
+            setArticles(data.results.slice(6, 12));
+          }
+          else if (num <= 6) {
+            setArticles(data.results.slice(0, 0));
+          }
+        }
+        else if (currentPage == 3){
+          if (num > 12 && num <= 15){
+            setArticles(data.results.slice(12, num));
+          }
+          else if (num <= 12) {
+            setArticles(data.results.slice(0, 0));
+          }
+        }
       } catch (error) {
         console.error('Error fetching articles:', error);
       }
     };
 
     fetchArticles();
-  }, [most, time, num]);
+  }, [most, time, num, currentPage]);
 
   return (
     <>
@@ -42,6 +73,13 @@ function App() {
       <Articles articles={articles}/>
       </div>
     </div>
+    <footer>
+      <div className='page-buttons'>
+        <button className='page-button' onClick={() => setCurrentPage(1)}>1</button>
+        <button className='page-button' onClick={() => setCurrentPage(2)}>2</button>
+        <button className='page-button' onClick={() => setCurrentPage(3)}>3</button>
+      </div>
+    </footer>
     </>
   )
 }

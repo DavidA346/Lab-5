@@ -4,8 +4,7 @@ import { useState } from 'react';
 const Sidebar = ({ mostFunction, timeFunction, numFunction }) => {
   const [number, setNumber] = useState(1);
 
-  const reassignNumber = () => {
-    numFunction(number);}
+  const reassignNumber = () => {numFunction(number);}
 
   const mostChosen = (event) => {
     const value = event.target.value;
@@ -33,9 +32,7 @@ const Sidebar = ({ mostFunction, timeFunction, numFunction }) => {
     <div className='filter-container'>
       <form className="number-of-articles">
         <div className="search-bar">
-        <input type="number" placeholder="Enter a value 1-15" min={1} max={15} value = {number} required onChange={(event)=>{
-               console.log(event)
-               setNumber(event.target.value)}}/> <br />
+        <input type="number" placeholder="Enter a value 1-15" min={1} max={15} value = {number} required onChange={(event)=>{setNumber(event.target.value)}}/> <br />
         </div>
         <div className="search-button">
           <button type="button" onClick={reassignNumber}>Search</button>

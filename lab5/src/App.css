@@ -7,6 +7,24 @@ body {
     gap: 30px;
 }
 
+.page-buttons {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-top: 20px;
+}
+
+.page-button{
+    background-color: grey;
+    color: white;
+}
+
+.page-button:focus {
+    background-color: gainsboro;
+}
+
 @media screen and (max-width: 900px) {
     .main-container {
       display: flex;

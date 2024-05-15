@@ -1,6 +1,6 @@
 import './Articles.css';
 
-const Articles = ({ articles }) => {
+const Articles = ({articles}) => {
   return (
     <div className="news-container">
         <div className="article-grid">

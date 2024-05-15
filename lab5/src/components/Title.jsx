@@ -1,8 +1,8 @@
 import './Title.css'
 
 const Title = ({titleMost, titleTime}) => {
-  let mostChosen = 'Default Title';
-  let timeChosen = 'Default Period';
+  let mostChosen = 'New York Times';
+  let timeChosen = 'Top Articles';
 
   if (titleMost == 'viewed') {
     mostChosen = 'Most Viewed'
